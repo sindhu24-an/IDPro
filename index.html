@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IDP OCR App</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- Tesseract.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="flex h-screen">
+
+  <!-- LEFT -->
+  <div class="w-1/2 p-4 bg-white shadow-lg flex flex-col">
+
+    <input type="file" id="pdf-upload" class="mb-4" accept="application/pdf">
+
+    <canvas id="pdf-canvas" class="border"></canvas>
+
+    <div class="mt-4 space-x-2">
+      <button id="prev" class="bg-blue-500 text-white px-3 py-1 rounded">Prev</button>
+      <button id="next" class="bg-blue-500 text-white px-3 py-1 rounded">Next</button>
+      <button id="extract" class="bg-green-500 text-white px-3 py-1 rounded">Extract Text</button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="w-1/2 p-4">
+    <textarea id="output"
+      class="w-full h-full p-4 border rounded"
+      placeholder="Extracted text will appear here..."></textarea>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
